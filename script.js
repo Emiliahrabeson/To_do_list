@@ -1,22 +1,61 @@
 let compteur = 0;
 function ajouter (){
     compteur++;
-    const liste = document.getElementById('task');
-    const taskInput = document.getElementById('taskInput');
-    const taskText = taskInput.value.trim();
+    const liste_tache = document.getElementById('task');
+    const taskInput = document.getElementById('taskInput');     //le apidirina eo am input
+    const taskText = taskInput.value.trim();        
 
-    const new_task = document.createElement('input');
-    new_task.type = 'checkbox';
-    new_task.id = 'tache_${compteur}';
-    const label = document.createElement('label');
+    const new_task_checkbox = document.createElement('input');      //le checkbox anle taskText
+    new_task_checkbox.type = 'checkbox';
+    new_task_checkbox.id = 'tache_${compteur}';
+    const label = document.createElement('label');          //label anle checkbox
     label.htmlFor = 'tache_${compteur}';
     label.textContent = taskText;
 
-    const div_task = document.createElement('div');
-    div_task.appendChild(new_task);
-    div_task.appendChild(label);
-    liste.appendChild(div_task);
+    const IconSuppr = document.createElement('i');
+    IconSuppr.className = "fas fa-trash delete-icon";
+    IconSuppr.title = 'Supprimer la tâche';
 
-    //refa selectionné le izy de barrena de aveo fafana asorina le task
+    IconSuppr.addEventListener("click",() => {
+        liste_tache.removeChild(div_task);
+        save();
+    });
+
+    const div_task = document.createElement('div');         //div pour chaque tache
+    div_task.className = "task_ligne";
+
+    div_task.appendChild(new_task_checkbox);         //ajout dans le div 
+    div_task.appendChild(label);
+    div_task.appendChild(IconSuppr);
+    liste_tache.appendChild(div_task);  
+
+    new_task_checkbox.addEventListener("change",() => {
+        if (new_task_checkbox.checked == 1) {
+            const elem_barree = document.createElement('del');
+            elem_barree.textContent = taskText;
+            label.textContent = '';
+            label.appendChild(elem_barree);
+            save();
+        }
+
+        else {
+            label.textContent = taskText;
+            save();
+        }
+    });
+
+    taskInput.value = '';
+    save();
+    
+}
+
+function save (){
+    localStorage.setItem(DataTransfer,liste_tache.innerHTML);
 
 }
+
+function lister_task () {
+    liste_tache.innerHTML = localStorage.getItem('data');
+}
+
+lister_task();

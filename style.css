@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: rgb(213, 176, 235);
+    text-align: center;
+    margin: 0;
+}
+
+#cadre {
+    background-color: rgb(213, 176, 235);
+    border: 30px solid rgb(232, 71, 135);
+    width: 600px;
+    min-height: 300px; 
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+h1 {
+    color: aliceblue;
+    font-weight: bold;
+    font-style: oblique;
+    padding-top: 10px;
+    text-align: left;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task_ligne {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin: 10px 30px;
+    color: aliceblue;
+}
+
+.delete-icon {
+    cursor: pointer;
+    color: #ff4444;
+    transition: color 0.2s;
+}
+
+.delete-icon:hover {
+    color: #cc0000;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    flex: 1;
+    outline: none;
+    background: transparent;
+    font-weight: 30px;
+
+}
+
+
+#add {
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: rgb(232, 71, 135);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+.barre {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-radius: 20px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+
+}
