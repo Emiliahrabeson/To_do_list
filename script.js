@@ -18,7 +18,6 @@ function ajouter (){
 
     IconSuppr.addEventListener("click",() => {
         liste_tache.removeChild(div_task);
-        save();
     });
 
     const div_task = document.createElement('div');         //div pour chaque tache
@@ -35,27 +34,14 @@ function ajouter (){
             elem_barree.textContent = taskText;
             label.textContent = '';
             label.appendChild(elem_barree);
-            save();
         }
 
         else {
             label.textContent = taskText;
-            save();
         }
     });
 
     taskInput.value = '';
-    save();
     
 }
 
-function save (){
-    localStorage.setItem(DataTransfer,liste_tache.innerHTML);
-
-}
-
-function lister_task () {
-    liste_tache.innerHTML = localStorage.getItem('data');
-}
-
-lister_task();

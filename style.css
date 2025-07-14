@@ -3,21 +3,26 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh; 
-    background-color: rgb(213, 176, 235);
+    background-color: white;
     text-align: center;
     margin: 0;
 }
 
 #cadre {
-    background-color: rgb(213, 176, 235);
-    border: 30px solid rgb(232, 71, 135);
+    background-color: #C8A1E0;
+    border: 1px solid #674188;
     width: 600px;
     min-height: 300px; 
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 0 auto;
     margin-top: 50px;
-    padding: 20px;
+    /* padding: 20px; */
+    box-shadow: 0 0 35px 35px #674188;
+    position: relative;
+    box-sizing: border-box;
 }
+
+
 
 h1 {
     color: aliceblue;
@@ -33,38 +38,52 @@ h1 {
 
 .task_ligne {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px; 
     margin: 10px 30px;
-    color: aliceblue;
+    color: black;
+    font-size: 20px;
+    padding: 5px 10px;
+    width: calc(100% - 60px);
+    /* border: 1px solid white; */
+    border-radius: 5px;
+    background-color: #F7EFE5;
+
+}
+
+.task_ligne label {
+    flex-grow: 1; 
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
 
 .delete-icon {
     cursor: pointer;
-    color: #ff4444;
-    transition: color 0.2s;
+    color: #000000; 
+    font-size: 16px;
+    margin-left: auto; 
+    flex-shrink: 0; 
 }
 
 .delete-icon:hover {
-    color: #cc0000;
+    color: #c40a0a; 
 }
-
 input[type="text"] {
     padding: 10px;
     border: none;
     flex: 1;
     outline: none;
     background: transparent;
-    font-weight: 30px;
-
+    font-size: 16px; 
+    color: #333;
 }
-
 
 #add {
     border: none;
     outline: none;
     padding: 16px 50px;
-    background-color: rgb(232, 71, 135);
+    background-color: #C68EFD;
     color: white;
     font-size: 15px;
     cursor: pointer;
@@ -80,5 +99,25 @@ input[type="text"] {
     border-radius: 20px;
     padding-left: 20px;
     margin-bottom: 25px;
+    margin: 20px;
 
 }
+
+input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #B33791;
+    border: 2px solid #674188;
+    border-radius: 6px; 
+    background-color: #fff; 
+    appearance: none; 
+    -webkit-appearance: none;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #674188;
+    border-color: #674188;
+    position: relative;
+}
+
